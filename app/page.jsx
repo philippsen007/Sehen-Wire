@@ -27,7 +27,7 @@ const LandingPage = () => {
 
       {/* Hero Section */}
       <section className="w-full py-20 text-center bg-gradient-to-b from-accent-corfundo to-black ">
-        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center  mt-12">
+        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center mt-4 md:mt-12">
           <div className="flex-1 mb-10 md:mb-0 text-center md:text-left mt-12">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-cortexto">
               Segurança e Acessibilidade em um Só Lugar
@@ -63,8 +63,8 @@ const LandingPage = () => {
       </section>
 
       {/* Funcionalidades */}
-      <section id="features" className="py-20 bg-black text-white">
-        <div className="container mx-auto px-6">
+      <section id="features" className="pb-20 pt-2 bg-black text-white">
+        <div className="container mx-auto px-6 mt-2">
           <h2 className="text-4xl font-bold mb-8 text-center text-red-800 break-words px-4">
             Funções Principais
           </h2>

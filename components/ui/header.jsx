@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,19 +10,37 @@ const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isClient, setIsClient] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
 
   useEffect(() => {
     setIsClient(true);
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+
       setIsVisible(currentScrollY < lastScrollY || currentScrollY < 10);
+
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+
       setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, isMenuOpen]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false); 
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const router = useRouter();
 
@@ -54,7 +72,7 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <Image
               src="/logosehen.png"
-              alt="Sehen Wire logo"
+              alt="SehenWire logo"
               width={40}
               height={40}
               className="object-cover"
@@ -86,12 +104,12 @@ const Header = () => {
         </nav>
 
         {/* Mobile Navigation */}
-        <div className="md:hidden relative">
+        <div className="md:hidden relative" ref={menuRef}>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="text-white"
           >
-            &#x22EE; {/* Unicode for vertical ellipsis */}
+            &#x22EE; {/* Unicode das bolinhas */}
           </button>
           {isMenuOpen && (
             <div className="absolute right-0 mt-2 bg-accent-corfundo shadow-lg rounded-md py-2">
