@@ -106,7 +106,7 @@ const LandingPage = () => {
             segurança e desempenho. Feito para dispositivos SBC, garantindo economia e eficiência.
           </p>
           <Image
-            src="/liner.png"
+            src="/Liner.png"
             alt=""
             width={400}
             height={200}
