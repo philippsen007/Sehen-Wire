@@ -81,7 +81,7 @@ const Header = () => {
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-4">
           <button
             onClick={() => navigateToSection("features")}
@@ -103,7 +103,7 @@ const Header = () => {
           </button>
         </nav>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Nav */}
         <div className="md:hidden relative" ref={menuRef}>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}

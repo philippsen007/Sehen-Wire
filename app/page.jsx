@@ -26,7 +26,7 @@ const LandingPage = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="w-full py-20 text-center bg-gradient-to-b from-accent-corfundo to-black ">
+      <section className="w-full py-20 text-center bg-gradient-to-b from-accent-corfundo to-black">
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center mt-4 md:mt-12">
           <div className="flex-1 mb-10 md:mb-0 text-center md:text-left mt-12">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-cortexto">
@@ -44,9 +44,9 @@ const LandingPage = () => {
             <p className="text-lg lg:text-2xl text-gray-300 mb-6">
               Um sistema focado em análise e cibersegurança para redes, acessível e poderoso.
             </p>
-            <Link href="/login">
-              <button className="mt-4 px-6 py-3 bg-red-800 hover:bg-red-600 text-white rounded-md transition-all">
-                Saiba Mais
+            <Link href="/linkwire">
+              <button className="mt-4 px-6 py-3 bg-red-800 hover:bg-red-600 hover:shadow-md hover:shadow-red-600/50 text-white rounded-md transition-all">
+                Conecte seu Wire
               </button>
             </Link>
           </div>
@@ -63,7 +63,7 @@ const LandingPage = () => {
       </section>
 
       {/* Funcionalidades */}
-      <section id="features" className="pb-20 pt-2 bg-black text-white">
+      <section id="features" className="pb-20 pt-6 bg-black text-white">
         <div className="container mx-auto px-6 mt-2">
           <h2 className="text-4xl font-bold mb-8 text-center text-red-800 break-words px-4">
             Funções Principais
@@ -143,7 +143,7 @@ const LandingPage = () => {
               ></textarea>
               <button
                 type="submit"
-                className="w-full bg-red-800 hover:bg-red-600 py-3 rounded text-white font-semibold transition-all"
+                className="w-full bg-red-800 hover:bg-red-600 py-3 rounded text-white font-semibold transition-all hover:shadow-md hover:shadow-red-600/50"
               >
                 Enviar Mensagem
               </button>
