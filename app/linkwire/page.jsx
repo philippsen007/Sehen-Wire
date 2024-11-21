@@ -5,8 +5,6 @@ import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import Link from "next/link";
 
 const LinkWire = () => {
   const [ipAddress, setIpAddress] = useState("");
@@ -104,10 +102,7 @@ const LinkWire = () => {
             Certifique-se de que seu dispositivo esteja ligado e conectado na mesma rede.
           </p>
         </div>
-              
-      <div>
-        <img src="/logosehen.png" alt="" />
-      </div>
+            
       </div>
         <Footer />
     </div>
