@@ -1,11 +1,26 @@
 "use client";
 
+import { useState } from 'react';
+
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
 import Image from "next/image";
 import Link from "next/link";
 
 const LandingPage = () => {
+
+  const [value, setValue] = useState('');
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  const handleInput = (event) => {
+    const textarea = event.target;
+    textarea.style.height = 'auto';
+    textarea.style.height = `${textarea.scrollHeight}px`;
+  };
+
   return (
     <div className="min-h-screen bg-accent-corfundo text-white relative">
       <Header />
@@ -19,8 +34,8 @@ const LandingPage = () => {
             </h1>
             <div className="flex justify-center md:hidden mb-6">
               <Image
-                src="/logosehen-removebg-preview.png"
-                alt="Image"
+                src="/logosehen.png"
+                alt="Sehen Wire Logo"
                 width={300}
                 height={300}
                 className="object-contain"
@@ -38,7 +53,7 @@ const LandingPage = () => {
           <div className="hidden md:flex justify-center w-full md:w-auto">
             <Image
               src="/logosehen.png"
-              alt="Image"
+              alt="Sehen Wire Logo"
               width={400}
               height={400}
               className="object-contain"
@@ -51,7 +66,7 @@ const LandingPage = () => {
       <section id="features" className="py-20 bg-black text-white">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold mb-8 text-center text-red-800 break-words px-4">
-            Funcionalidades Principais
+            Funções Principais
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="p-6 bg-accent-corfundo rounded-lg shadow-md hover:scale-105 transition-all">
@@ -119,9 +134,12 @@ const LandingPage = () => {
                 className="w-full p-3 rounded bg-accent-corfundo text-white focus:outline-none"
               />
               <textarea
+              value={value}
+              onChange={handleChange}
+              onInput={handleInput}
                 rows="4"
                 placeholder="Sua Mensagem"
-                className="w-full p-3 rounded bg-accent-corfundo text-white focus:outline-none"
+                className="w-full h-auto overflow-hidden p-3 rounded bg-accent-corfundo text-white focus:outline-none resize-none"
               ></textarea>
               <button
                 type="submit"

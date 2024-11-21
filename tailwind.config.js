@@ -19,16 +19,11 @@ module.exports = {
 			lg: "960px",
 			xl: "1200px",
 		},
-    // fontFamily: {
-		// 	primary: "var(--font-montserrat)",
-		// 	//serve para setar a variação como um componete no tailwindcss
-		// },
     extend: {
       textColor: {
 				cortexto: "#FFFFFF",
 			},
 			colors: {
-				//primary: "#212121",
 				accent: {
           corfundo: "#111111",
           textfd: "#CFCFCF", 
