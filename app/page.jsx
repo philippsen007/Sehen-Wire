@@ -106,11 +106,11 @@ const LandingPage = () => {
             segurança e desempenho. Feito para dispositivos SBC, garantindo economia e eficiência.
           </p>
           <Image
-            src="/"
+            src="/liner.png"
             alt=""
-            width={600}
-            height={400}
-            className="mt-8 mx-auto"
+            width={400}
+            height={200}
+            className="mt-12 mx-auto"
           />
         </div>
       </section>
